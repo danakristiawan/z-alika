@@ -12,18 +12,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 function base_uri()
 {
-    // $base_uri = 'http://10.10.1.76/v2021/api/';
+    // $base_uri = 'http://10.10.1.76/v2021/api2/';
     $base_uri = 'http://localhost:8888/x-alika/api2/';
     return $base_uri;
 }
 
 function auth()
 {
-    $auth = ['admin', 'alika-1234'];
+    $auth = ['superalika', 'Hkkg456*#@ghj@#jkkknb4578HrtgJgffg875hfg&kjkh*hgf*gff@fghjjYbbh654g6sh6sj8253nsg6j*hnb#'];
     return $auth;
 }
 
 function apiKey()
 {
-    return 'admin-alika';
+    return 'hGfdg456ghD4f566afjh6Fg@hgb#jijk';
 }

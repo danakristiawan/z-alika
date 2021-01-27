@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group mb-2">
                     <label for="">date_created:</label>
-                    <input type="text" name="date_created" class="form-control <?= form_error('date_created') ? 'is-invalid' : ''; ?>" placeholder="dd-mm-yyy">
+                    <input type="text" name="date_created" class="form-control <?= form_error('date_created') ? 'is-invalid' : ''; ?>" placeholder="dd-mm-yyyy">
                     <div class="invalid-feedback">
                         <?= form_error('date_created'); ?>
                     </div>
