@@ -63,7 +63,7 @@
         </h6>
         <?php
         $menu2 = [
-            ['name' => 'Tukin Online', 'url' => 'tukin-online']
+            ['name' => 'E-tukin [intra]', 'url' => 'tukin-online']
         ]
         ?>
         <ul class="nav flex-column">
