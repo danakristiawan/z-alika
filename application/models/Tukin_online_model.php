@@ -30,12 +30,12 @@ class Tukin_online_model extends CI_Model
 
     public function getDetailTukin($bulan = null, $tahun = null, $kdsatker = null, $limit = 0, $offset = 0)
     {
-        return $this->db->query("SELECT a.*, b.nmpeg AS nama FROM data_tukin a LEFT JOIN data_pegawai b ON a.nip=b.nip WHERE a.bulan='$bulan' AND a.tahun='$tahun' AND a.kdsatker='$kdsatker' LIMIT $limit OFFSET $offset")->result_array();
+        return $this->db->query("SELECT * FROM data_tukin  WHERE bulan='$bulan' AND tahun='$tahun' AND kdsatker='$kdsatker' LIMIT $limit OFFSET $offset")->result_array();
     }
 
     public function findDetailTukin($bulan = null, $tahun = null, $kdsatker = null, $keyword = null, $limit = 0, $offset = 0)
     {
-        return $this->db->query("SELECT a.*, b.nama FROM data_tukin a LEFT JOIN landing_ref_pegawai b ON a.nip=b.nip WHERE a.bulan='$bulan' AND a.tahun='$tahun' AND a.kdsatker='$kdsatker' AND b.nama LIKE '%$keyword%' LIMIT $limit OFFSET $offset")->result_array();
+        return $this->db->query("SELECT * FROM data_tukin WHERE bulan='$bulan' AND tahun='$tahun' AND kdsatker='$kdsatker' AND nama LIKE '%$keyword%' OR bulan='$bulan' AND tahun='$tahun' AND kdsatker='$kdsatker' AND nip LIKE '%$keyword%' LIMIT $limit OFFSET $offset")->result_array();
     }
 
     public function countTukin($tahun = null, $bulan = null, $kdsatker = null)

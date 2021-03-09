@@ -12,7 +12,12 @@
             <?php endif; ?>
         </div>
     </div>
-    <div class="row mb-1">
+    <div class="row mb-2">
+        <div class="col">
+            <a href="<?= base_url('tukin-online/impor'); ?>" class="btn btn-sm btn-outline-secondary ml-1"><b>+</b> Impor Data Excel</a>
+        </div>
+    </div>
+    <div class=" row mb-1">
         <div class="col">
             <?php foreach ($tahun as $t) : ?>
                 <a href="<?= base_url('tukin-online/index/') . $t['tahun'] . '/' . $bln; ?>" class="btn btn-sm btn-outline-secondary <?= $t['tahun'] == $thn ? 'active' : '' ?> ml-1 mt-2 mb-2"><?= $t['tahun']; ?></a>
@@ -41,6 +46,7 @@
                     <tbody>
                         <?php
                         $no = 1;
+                        $jml = 0;
                         foreach ($tukin as $r) : ?>
                             <tr>
                                 <td class="text-center"><?= $no++; ?></td>
@@ -53,7 +59,14 @@
                                     </div>
                                 </td>
                             </tr>
-                        <?php endforeach; ?>
+                        <?php
+                            $jml += $r['jml'];
+                        endforeach; ?>
+                        <tr>
+                            <td class="text-center" colspan="2">Jumlah</td>
+                            <td class="text-right"><?= number_format($jml, 0, ',', '.'); ?></td>
+                            <td></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
