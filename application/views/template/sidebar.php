@@ -63,8 +63,11 @@
         </h6>
         <?php
         $menu2 = [
-            ['name' => 'Tukin Online', 'url' => 'tukin-online']
-        ]
+            ['name' => 'Tukin Online', 'url' => 'tukin-online'],
+            ['name' => 'Tukin NKP', 'url' => 'tukin-nkp'],
+            ['name' => 'SPT', 'url' => 'spt'],
+            ['name' => 'Payment', 'url' => 'payment']
+        ];
         ?>
         <ul class="nav flex-column">
             <?php foreach ($menu2 as $r) : ?>

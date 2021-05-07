@@ -25,7 +25,7 @@ class Tukin_online_model extends CI_Model
 
     public function getTukin($tahun = null, $bulan = null)
     {
-        return $this->db->query("SELECT kdsatker, COUNT(nip) AS jml FROM data_tukin WHERE tahun='$tahun' AND bulan='$bulan' GROUP BY kdsatker")->result_array();
+        return $this->db->query("SELECT kdsatker,sts, COUNT(nip) AS jml FROM data_tukin WHERE tahun='$tahun' AND bulan='$bulan' GROUP BY kdsatker,sts")->result_array();
     }
 
     public function getDetailTukin($bulan = null, $tahun = null, $kdsatker = null, $limit = 0, $offset = 0)
@@ -84,6 +84,7 @@ class Tukin_online_model extends CI_Model
                 ]
             ]);
         }
+        $this->db->update('data_tukin', ['sts' => 1], ['bulan' => $bulan, 'tahun' => $tahun, 'kdsatker' => $kdsatker]);
         return json_decode($response->getBody()->getContents(), true);
     }
 
@@ -127,6 +128,7 @@ class Tukin_online_model extends CI_Model
                 'X-API-KEY' => apiKey()
             ]
         ]);
+        $this->db->update('data_tukin', ['sts' => 1], ['nip' => $nip, 'bulan' => $bulan, 'tahun' => $tahun, 'kdsatker' => $kdsatker]);
         return json_decode($response->getBody()->getContents(), true);
     }
 }

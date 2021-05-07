@@ -31,63 +31,40 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>NIP</th>
-                            <th>Nama</th>
                             <th>Bulan</th>
                             <th>Tahun</th>
                             <th>Kdsatker</th>
-                            <th>Grade</th>
-                            <th>Tjpokok</th>
-                            <th>Tjtamb</th>
-                            <th>Abspotr</th>
-                            <th>Abspotp</th>
-                            <th>Tkpph</th>
-                            <th colspan="22">Potongan</th>
+                            <th>NIP</th>
+                            <th>Bruto</th>
+                            <th>Pph</th>
+                            <th>Netto</th>
+                            <th>Jenis</th>
+                            <th>Uraian</th>
+                            <th>Tanggal</th>
+                            <th>Nospm</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php $no = $page + 1;
-                        foreach ($tukin as $r) : ?>
+                        foreach ($tukin_nkp as $r) : ?>
                             <tr>
                                 <td><?= $no++; ?></td>
-                                <td><?= $r['nip']; ?></td>
-                                <td><?= $r['nama']; ?></td>
                                 <td><?= $r['bulan']; ?></td>
                                 <td><?= $r['tahun']; ?></td>
                                 <td><?= $r['kdsatker']; ?></td>
-                                <td><?= $r['grade']; ?></td>
-                                <td><?= $r['tjpokok']; ?></td>
-                                <td><?= $r['tjtamb']; ?></td>
-                                <td><?= $r['abspotr']; ?></td>
-                                <td><?= $r['abspotp']; ?></td>
-                                <td><?= $r['tkpph']; ?></td>
-                                <td><?= $r['p1']; ?></td>
-                                <td><?= $r['p2']; ?></td>
-                                <td><?= $r['p3']; ?></td>
-                                <td><?= $r['p4']; ?></td>
-                                <td><?= $r['p5']; ?></td>
-                                <td><?= $r['p6']; ?></td>
-                                <td><?= $r['p7']; ?></td>
-                                <td><?= $r['p8']; ?></td>
-                                <td><?= $r['p9']; ?></td>
-                                <td><?= $r['p10']; ?></td>
-                                <td><?= $r['p11']; ?></td>
-                                <td><?= $r['p12']; ?></td>
-                                <td><?= $r['p13']; ?></td>
-                                <td><?= $r['p14']; ?></td>
-                                <td><?= $r['p15']; ?></td>
-                                <td><?= $r['p16']; ?></td>
-                                <td><?= $r['p17']; ?></td>
-                                <td><?= $r['p18']; ?></td>
-                                <td><?= $r['p19']; ?></td>
-                                <td><?= $r['p20']; ?></td>
-                                <td><?= $r['p21']; ?></td>
-                                <td><?= $r['p22']; ?></td>
+                                <td><?= $r['nip']; ?></td>
+                                <td><?= $r['bruto']; ?></td>
+                                <td><?= $r['pph']; ?></td>
+                                <td><?= $r['netto']; ?></td>
+                                <td><?= $r['jenis']; ?></td>
+                                <td><?= $r['uraian']; ?></td>
+                                <td><?= date('d-m-Y', $r['tanggal']); ?></td>
+                                <td><?= $r['nospm']; ?></td>
                                 <td>
                                     <div class="btn-group btn-group-sm" role="group">
                                         <?php if ($r['sts'] == null) : ?>
-                                            <a href="<?= base_url('tukin-online/upload-detail/') . $r['nip'] . '/' . $r['bulan'] . '/' . $r['tahun'] . '/' . $r['kdsatker']; ?>" class="btn btn-sm btn-outline-secondary pt-0 pb-0" onclick="return confirm('Apakah Anda yakin akan mengupload data ini?');">Upload</a>
+                                            <a href="<?= base_url('tukin-nkp/upload-detail/') . $r['nip'] . '/' . $r['bulan'] . '/' . $r['tahun'] . '/' . $r['kdsatker']; ?>" class="btn btn-sm btn-outline-secondary pt-0 pb-0" onclick="return confirm('Apakah Anda yakin akan mengupload data ini?');">Upload</a>
                                         <?php endif; ?>
                                     </div>
                                 </td>

@@ -1,6 +1,6 @@
 <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Tukin Online</h1>
+        <h1 class="h2">Tukin NKP</h1>
     </div>
     <div class="row">
         <div class="col">
@@ -14,20 +14,20 @@
     </div>
     <div class="row mb-2">
         <div class="col">
-            <a href="<?= base_url('tukin-online/impor'); ?>" class="btn btn-sm btn-outline-secondary ml-1"><b>+</b> Impor Data Excel</a>
+            <a href="<?= base_url('tukin-nkp/impor'); ?>" class="btn btn-sm btn-outline-secondary ml-1"><b>+</b> Impor Data Excel</a>
         </div>
     </div>
     <div class=" row mb-1">
         <div class="col">
             <?php foreach ($tahun as $t) : ?>
-                <a href="<?= base_url('tukin-online/index/') . $t['tahun'] . '/' . $bln; ?>" class="btn btn-sm btn-outline-secondary <?= $t['tahun'] == $thn ? 'active' : '' ?> ml-1 mt-2 mb-2"><?= $t['tahun']; ?></a>
+                <a href="<?= base_url('tukin-nkp/index/') . $t['tahun'] . '/' . $bln; ?>" class="btn btn-sm btn-outline-secondary <?= $t['tahun'] == $thn ? 'active' : '' ?> ml-1 mt-2 mb-2"><?= $t['tahun']; ?></a>
             <?php endforeach; ?>
         </div>
     </div>
     <div class="row mb-2">
         <div class="col">
             <?php foreach ($bulan as $b) : ?>
-                <a href="<?= base_url('tukin-online/index/') . $thn . '/' . $b['bulan']; ?>" class="btn btn-sm btn-outline-secondary <?= $b['bulan'] == $bln ? 'active' : '' ?> ml-1 mt-2 mb-2"><?= $b['bulan']; ?></a>
+                <a href="<?= base_url('tukin-nkp/index/') . $thn . '/' . $b['bulan']; ?>" class="btn btn-sm btn-outline-secondary <?= $b['bulan'] == $bln ? 'active' : '' ?> ml-1 mt-2 mb-2"><?= $b['bulan']; ?></a>
             <?php endforeach; ?>
         </div>
     </div>
@@ -47,16 +47,16 @@
                         <?php
                         $no = 1;
                         $jml = 0;
-                        foreach ($tukin as $r) : ?>
+                        foreach ($tukin_nkp as $r) : ?>
                             <tr>
                                 <td class="text-center"><?= $no++; ?></td>
                                 <td><?= $r['kdsatker']; ?></td>
                                 <td class="text-right"><?= number_format($r['jml'], 0, ',', '.'); ?></td>
                                 <td>
                                     <div class="btn-group btn-group-sm" role="group">
-                                        <a href="<?= base_url('tukin-online/detail/') . $thn . '/' . $bln . '/' . $r['kdsatker'] . '/1'; ?>" class="btn btn-sm btn-outline-secondary pt-0 pb-0">Detail</a>
+                                        <a href="<?= base_url('tukin-nkp/detail/') . $thn . '/' . $bln . '/' . $r['kdsatker'] . '/1'; ?>" class="btn btn-sm btn-outline-secondary pt-0 pb-0">Detail</a>
                                         <?php if ($r['sts'] == null) : ?>
-                                            <a href="<?= base_url('tukin-online/upload/') . $thn . '/' . $bln . '/' . $r['kdsatker']; ?>" class="btn btn-sm btn-outline-secondary pt-0 pb-0" onclick="return confirm('Apakah Anda yakin akan mengupload data ini?');">Upload</a>
+                                            <a href="<?= base_url('tukin-nkp/upload/') . $thn . '/' . $bln . '/' . $r['kdsatker']; ?>" class="btn btn-sm btn-outline-secondary pt-0 pb-0" onclick="return confirm('Apakah Anda yakin akan mengupload data ini?');">Upload</a>
                                         <?php endif; ?>
                                     </div>
                                 </td>
