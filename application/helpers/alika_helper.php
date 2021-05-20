@@ -12,8 +12,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 function base_uri()
 {
-    $base_uri = 'https://alika.kemenkeu.go.id/api2/';
-    // $base_uri = 'http://localhost:8888/x-alika/api2/';
+    // $base_uri = 'https://alika.kemenkeu.go.id/api2/';
+    $base_uri = 'http://localhost:8888/x-alika/api2/';
     return $base_uri;
 }
 

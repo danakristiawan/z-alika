@@ -58,6 +58,7 @@
                                         <?php if ($r['sts'] == null) : ?>
                                             <a href="<?= base_url('tukin-online/upload/') . $thn . '/' . $bln . '/' . $r['kdsatker']; ?>" class="btn btn-sm btn-outline-secondary pt-0 pb-0" onclick="return confirm('Apakah Anda yakin akan mengupload data ini?');">Upload</a>
                                         <?php endif; ?>
+                                        <a href="<?= base_url('tukin-online/ekspor/') . $thn . '/' . $bln . '/' . $r['kdsatker']; ?>" class="btn btn-sm btn-outline-secondary pt-0 pb-0">Ekspor</a>
                                     </div>
                                 </td>
                             </tr>
